@@ -26,7 +26,17 @@ console.log(adventurer);
 adventurer.companion.friend = {
   name: "Frank",
   type: "Flea",
-  Belongings: ["small hat", "sunglasses"],
+  belongings: ["small hat", "sunglasses"],
 };
 
 console.log(adventurer);
+
+//adding method
+
+adventurer.roll = function (mod = 0) {
+  const result = Math.floor(Math.random() * 20) + 1 + mod;
+  console.log(`${this.name} rolled a ${result}.`);
+};
+
+adventurer.roll();
+adventurer.roll(2);
